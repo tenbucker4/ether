@@ -6,8 +6,31 @@ function App() {
 
     return (
         <>
+            <header
+                style={{ fontWeight: "100", textTransform: "uppercase" }}
+                className="app-title"
+            >
+                <div
+                    style={{
+                        fontSize: "36px",
+                    }}
+                >
+                    Ether
+                </div>
+                <div style={{ fontSize: "18px" }}>Explore our solar system</div>
+            </header>
             <button onClick={() => setIndex((prev) => prev - 1)}>Left</button>
             <button onClick={() => setIndex((prev) => prev + 1)}>Right</button>
+            <div
+                className="planet-title"
+                style={{
+                    textTransform: "uppercase",
+                    fontSize: "24px",
+                    fontWeight: "100",
+                }}
+            >
+                Mercury
+            </div>
             <div className="slider-container">
                 <div
                     className="slider"

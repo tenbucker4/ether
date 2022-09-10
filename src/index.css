@@ -4,6 +4,8 @@
     box-sizing: border-box;
     margin: 0;
     border: 0;
+    font-family: "Montserrat", sans-serif;
+    color: white;
 }
 
 :root {
@@ -25,6 +27,19 @@
     background-color: black;
 }
 
+button {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+header {
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .slider-container {
     position: absolute;
     bottom: -5vh;
@@ -32,9 +47,11 @@
     display: flex;
     width: 100%;
     overflow: hidden;
+    overflow-y: auto;
 }
 
 .slider {
+    z-index: 1;
     height: 32vw;
     padding-left: 25vw;
     padding-right: 25vw;
@@ -64,7 +81,7 @@
 }
 
 .mercury:hover {
-    box-shadow: 0px -2px 5vh 5px var(--mercury);
+    box-shadow: 0px -2px 7vh 5px var(--mercury);
 }
 
 .venus {
@@ -105,4 +122,12 @@
 .pluto {
     background: linear-gradient(to top, black, var(--pluto));
     box-shadow: 0px -2px 20px 5px var(--pluto);
+}
+
+.planet-title {
+    position: absolute;
+    bottom: 25vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
 }
