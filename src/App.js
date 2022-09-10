@@ -1,8 +1,33 @@
 import React, { useState } from "react";
 import "./index.css";
 
+const planets = [
+    "mercury",
+    "venus",
+    "earth",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto",
+];
+
 function App() {
     const [index, setIndex] = useState(0);
+    const [currentPlanet, setCurrentPlanet] = useState(planets[index]);
+    const [opacity, setOpacity] = useState(1);
+
+    const translateRight = async () => {
+        setIndex((prev) => prev + 1);
+        console.log(index);
+        setCurrentPlanet(planets[index + 1]);
+        console.log(currentPlanet);
+    };
+
+    const translateLeft = () => {
+        setIndex((prev) => prev - 1);
+    };
 
     return (
         <>
@@ -19,17 +44,22 @@ function App() {
                 </div>
                 <div style={{ fontSize: "18px" }}>Explore our solar system</div>
             </header>
-            <button onClick={() => setIndex((prev) => prev - 1)}>Left</button>
-            <button onClick={() => setIndex((prev) => prev + 1)}>Right</button>
+            <button onClick={() => translateLeft()}>Left</button>
+            <button onClick={() => translateRight()}>Right</button>
             <div
                 className="planet-title"
                 style={{
                     textTransform: "uppercase",
-                    fontSize: "24px",
                     fontWeight: "100",
                 }}
             >
-                Mercury
+                <div style={{ fontSize: "24px" }}>{currentPlanet}</div>
+                <div
+                    style={{ fontSize: "14px", color: "#e8927c" }}
+                    className="learn-more"
+                >
+                    Learn More
+                </div>
             </div>
             <div className="slider-container">
                 <div

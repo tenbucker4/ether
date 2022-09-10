@@ -125,6 +125,11 @@ header {
 }
 
 .planet-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 25vw;
     position: absolute;
     bottom: 25vw;
     left: 50%;
