@@ -58,45 +58,50 @@
 
 .mercury {
     background: linear-gradient(to top, black, var(--mercury));
-    box-shadow: 0px -2px 60px 5px var(--mercury);
+    box-shadow: 0px -2px 20px 5px var(--mercury);
+    transition: box-shadow 2s ease-in-out;
+}
+
+.mercury:hover {
+    box-shadow: 0px -2px 5vh 5px var(--mercury);
 }
 
 .venus {
     background: linear-gradient(to top, black, var(--venus));
-    box-shadow: 0px -2px 60px 5px var(--venus);
+    box-shadow: 0px -2px 20px 5px var(--venus);
 }
 
 .earth {
     background: linear-gradient(to top, black, var(--earth));
-    box-shadow: 0px -2px 60px 5px var(--earth);
+    box-shadow: 0px -2px 20px 5px var(--earth);
 }
 
 .mars {
     background: linear-gradient(to top, black, var(--mars));
-    box-shadow: 0px -2px 60px 5px var(--mars);
+    box-shadow: 0px -2px 20px 5px var(--mars);
 }
 
 .jupiter {
     background: linear-gradient(to top, black, var(--jupiter));
-    box-shadow: 0px -2px 60px 5px var(--jupiter);
+    box-shadow: 0px -2px 20px 5px var(--jupiter);
 }
 
 .saturn {
     background: linear-gradient(to top, black, var(--saturn));
-    box-shadow: 0px -2px 60px 5px var(--saturn);
+    box-shadow: 0px -2px 20px 5px var(--saturn);
 }
 
 .uranus {
     background: linear-gradient(to top, black, var(--uranus));
-    box-shadow: 0px -2px 60px 5px var(--uranus);
+    box-shadow: 0px -2px 20px 5px var(--uranus);
 }
 
 .neptune {
     background: linear-gradient(to top, black, var(--neptune));
-    box-shadow: 0px -2px 60px 5px var(--neptune);
+    box-shadow: 0px -2px 20px 5px var(--neptune);
 }
 
 .pluto {
     background: linear-gradient(to top, black, var(--pluto));
-    box-shadow: 0px -2px 60px 5px var(--pluto);
+    box-shadow: 0px -2px 20px 5px var(--pluto);
 }
