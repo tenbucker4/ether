@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 
 const planets = [
@@ -30,31 +30,46 @@ function App() {
     const [currentPlanet, setCurrentPlanet] = useState(planets[index]);
     const [currentColor, setCurrentColor] = useState(colors[index]);
     const [opacity, setOpacity] = useState(1);
+    const [isHidden, setIsHidden] = useState(true);
 
     const translateRight = () => {
-        timer();
-        // console.log(opacity);
-        // setOpacity(0);
-        // console.log(opacity);
-        setIndex((prev) => prev + 1);
-        setTimeout(() => {
-            setCurrentPlanet(planets[index + 1]);
-            setCurrentColor(colors[index + 1]);
-        }, 1500);
-        // setCurrentPlanet(planets[index + 1]);
-        // setCurrentColor(colors[index + 1]);
-        // setOpacity(1);
+        if (index == 8) {
+            startTimer();
+            setIndex(0);
+            setTimeout(() => {
+                setCurrentPlanet(planets[0]);
+                setCurrentColor(colors[0]);
+            }, 1500);
+        } else {
+            startTimer();
+            setIndex((prev) => prev + 1);
+            setTimeout(() => {
+                setCurrentPlanet(planets[index + 1]);
+                setCurrentColor(colors[index + 1]);
+            }, 1500);
+            console.log("shouldnt see this");
+        }
     };
 
     const translateLeft = () => {
-        // setOpacity(0);
-        setIndex((prev) => prev - 1);
-        setCurrentPlanet(planets[index - 1]);
-        setCurrentColor(colors[index - 1]);
-        // setOpacity(1);
+        if (index == 0) {
+            startTimer();
+            setIndex(8);
+            setTimeout(() => {
+                setCurrentPlanet(planets[8]);
+                setCurrentColor(colors[8]);
+            }, 1500);
+        } else {
+            startTimer();
+            setIndex((prev) => prev - 1);
+            setTimeout(() => {
+                setCurrentPlanet(planets[index - 1]);
+                setCurrentColor(colors[index - 1]);
+            }, 1500);
+        }
     };
 
-    const timer = () => {
+    const startTimer = () => {
         setOpacity(0);
         setTimeout(() => {
             setOpacity(1);
@@ -78,6 +93,17 @@ function App() {
             </header>
             <button onClick={() => translateLeft()}>Left</button>
             <button onClick={() => translateRight()}>Right</button>
+            <button onClick={() => setIsHidden((prev) => !prev)}>
+                Sidebar
+            </button>
+            <aside
+                className="sidebar"
+                style={{ right: isHidden ? "-40%" : "0" }}
+            >
+                <div style={{ textTransform: "uppercase" }}>
+                    {currentPlanet}
+                </div>
+            </aside>
             <div
                 className="planet-title"
                 style={{

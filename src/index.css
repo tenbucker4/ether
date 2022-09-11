@@ -136,3 +136,13 @@ header {
     transform: translateX(-50%);
     z-index: 5;
 }
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    transition: right 0.75s ease-in-out;
+}
