@@ -91,19 +91,6 @@ function App() {
                 </div>
                 <div style={{ fontSize: "18px" }}>Explore our solar system</div>
             </header>
-            <button onClick={() => translateLeft()}>Left</button>
-            <button onClick={() => translateRight()}>Right</button>
-            <button onClick={() => setIsHidden((prev) => !prev)}>
-                Sidebar
-            </button>
-            <aside
-                className="sidebar"
-                style={{ right: isHidden ? "-40%" : "0" }}
-            >
-                <div style={{ textTransform: "uppercase" }}>
-                    {currentPlanet}
-                </div>
-            </aside>
             <div
                 className="planet-title"
                 style={{
@@ -121,10 +108,34 @@ function App() {
                         textDecoration: "underline",
                     }}
                     className="learn-more"
+                    onClick={() => setIsHidden((prev) => !prev)}
                 >
                     Learn More
                 </div>
             </div>
+            <div
+                className="planet-description"
+                style={{
+                    textTransform: "uppercase",
+                    fontSize: "16px",
+                    fontWeight: "100",
+                }}
+            >
+                <p style={{ textAlign: "center" }}>
+                    This is a test. This is a test. This is a test. This is a
+                    test. This is a test. This is a test. This is a test.
+                </p>
+            </div>
+            <button onClick={() => translateLeft()}>Left</button>
+            <button onClick={() => translateRight()}>Right</button>
+            <aside
+                className="sidebar"
+                style={{ right: isHidden ? "-40%" : "0" }}
+            >
+                <div style={{ textTransform: "uppercase" }}>
+                    {currentPlanet}
+                </div>
+            </aside>
             <div className="slider-container">
                 <div
                     className="slider"
