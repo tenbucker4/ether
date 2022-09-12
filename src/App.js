@@ -21,7 +21,7 @@ const colors = [
     "orange",
     "#b29d81",
     "#8dcdd8",
-    "#4f83e2",
+    "#794fe2",
     "#fccfba",
 ];
 
@@ -33,7 +33,7 @@ function App() {
     const [isHidden, setIsHidden] = useState(true);
 
     const translateRight = () => {
-        if (index == 8) {
+        if (index === 8) {
             startTimer();
             setIndex(0);
             setTimeout(() => {
@@ -52,7 +52,7 @@ function App() {
     };
 
     const translateLeft = () => {
-        if (index == 0) {
+        if (index === 0) {
             startTimer();
             setIndex(8);
             setTimeout(() => {
