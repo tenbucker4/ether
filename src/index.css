@@ -35,6 +35,10 @@ header {
     justify-content: flex-start;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .app-title {
     text-align: center;
 }
@@ -197,6 +201,11 @@ header,
 .sidebar div,
 .sidebar ul li {
     color: rgb(26, 26, 26);
+}
+
+.sidebar ul {
+    padding-left: 0;
+    line-height: 1.5rem;
 }
 
 .sidebar img {

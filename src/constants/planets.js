@@ -38,14 +38,14 @@ const planets = [
         description:
             "The red planet. Named after the Roman god of war, Mars is a terrestrial planet with a thin atmosphere and intricate surface features such as valleys, mountains, and polar ice caps.",
         blurb1: "Mars has been explored for several uncrewed spacecraft, beginning in 1965 with Mariner 4. Some of the more notable surface features of the planet include Olympus Mons, a mountain that dwarfs the size of even Mount Everest, and the Valles Marineris, one of the largest known canyons in the Solar System. Days and seasons on Mars are quite comparable to those on Earth due to their similar rotation period and rotaional axis tilt.",
-        blurb2: "Mars can be seen by the naked eye in a dark reddish color, hence its nickname, due to the presence of iron oxide on its surface. Despite its polar ice caps likely being composed of water, the atmospheric pressure on Mars is 1% of that on Earth, making the presence of liquid surface water impossible. The planet may have been wetter in the past, but it is unknown is it has ever supported life.",
+        blurb2: "Mars can be seen by the naked eye in a dark reddish color - hence its nickname - due to the presence of iron oxide on its surface. Despite its polar ice caps likely being composed of water, the atmospheric pressure on Mars is 1% of that on Earth, making the presence of liquid surface water impossible. The planet may have been wetter in the past, but it is unknown if it has ever supported life.",
         blurb3: mars,
     },
     {
         name: "jupiter",
         description:
             "The largest planet in our Solar System. Named after the Roman god Jupiter, king of the gods, it is a gas giant with a mass over twice as large as all the other planets combined.",
-        blurb1: "Jupiter is more massive than all the other planets in the Solar System combined, despite only being 0.01% the size of the Sun. Along with the other giant planets, Jupiter doesn't have a well-defined solid surface. It is instead made primarily of hydrogen and helium gas. Due to its rapid rotation, Jupiter is actually slightly spherical shape, with a slight bulde around its equator.",
+        blurb1: "Jupiter is more massive than all the other planets in the Solar System combined, despite only being 0.01% the size of the Sun. Along with the other giant planets, Jupiter doesn't have a well-defined solid surface. It is instead made primarily of hydrogen and helium gas. Due to its rapid rotation, Jupiter is actually slightly spherical in shape, with a slight bulge around its equator.",
         blurb2: "Arguably Jupiter's most promiment feature is its so-called 'Great Red Spot', often seen in images and illustrations. The giant spot is a result of latitudinal bands around the outer atmosphere which produce turbulence and storms at their intersections. Scientists are not sure why the spot appears red in color, although a possible explanation is the reaction of photodissociated ammonia and acetylene.",
         blurb3: jupiter,
     },
@@ -54,14 +54,14 @@ const planets = [
         description:
             "The second largest planet in our Solar System, behind Jupiter. Saturn is most known for its prominent ring system consisting mostly of ice, dust, and debris.",
         blurb1: "Saturn is a gas giant with a radius nearly 10 times that of Earth. Its characteristic pale yellow color is due to the presence of ammonia crystals in its upper atmosphere. The planet consists of a core likely consisting of iron and nickel, followed by layers of metallic hydrogen, liquid hydrogen and helium, and gaseous helium, respectively.",
-        blurb2: "The planet's amazing ring system extends out to 120,000 kilometers outwards from its equator. Each ring approximately 20 meters in thickness. Saturn also has at least 83 moons, not including the hundreds of smaller 'moonlets' in its rings. Its largest moon, Titan, is larger than Mercury and is the only known moon in the Solar System to have its own atmosphere.",
+        blurb2: "The planet's amazing ring system extends out to 120,000 kilometers outwards from its equator. Each ring is approximately 20 meters in thickness. Saturn also has at least 82 moons, not including the hundreds of smaller 'moonlets' in its rings. Its largest moon, Titan, is larger than Mercury and is the only known moon in the Solar System to have its own atmosphere.",
         blurb3: saturn,
     },
     {
         name: "uranus",
         description:
             "Uranus, along with Neptune, is classified as an 'ice giant' due to its composition of water, ammonia, and methane. It has the coldest atmospheric temperature in the Solar System.",
-        blurb1: "Uranus has a complex, layered cloud structure resulting from its lower water region to its upper methane region. Despite its bitterly cold surface temperatures, Uranus has a hot, dense fluid mantle made of water, ammonia, and other volatile compounds. The extreme pressure and temperatures within the planet could potentially break down methane molecules, with the carbon atoms compressing into diamond crystals that rain down like hail.",
+        blurb1: "Uranus has a complex, layered cloud structure resulting from its lower water to upper methane regions in its atmosphere. Despite its bitterly cold surface temperatures, Uranus has a hot, dense fluid mantle made of water, ammonia, and other volatile compounds. The extreme pressure and temperatures within the planet could potentially break down methane molecules, with the carbon atoms compressing into diamond crystals that rain down like hail.",
         blurb2: "Uranus has a very unique configuration. Its axis of rotation is tilted sideways, almost completely in plane with its solar orbit. The north and south poles, therefore, exist where other planets typically have their equator. Voyager 2 was the only spacecraft to visit the planet, back in 1986. The findings describe 'an almost featureless' planet, without the clouds or storms typical of other gas giants.",
         blurb3: uranus,
     },
@@ -69,8 +69,8 @@ const planets = [
         name: "neptune",
         description:
             "The other so-called 'ice giant' along with Uranus, Neptune is denser and physically smaller than its nearby partner due to the gravitational compression of its atmosphere.",
-        blurb1: "Neptune is named after the Roman god of the sea, and has an astronomical symbol representing Neptune's trident. Neptune isn't visible to the naked eye and is the only planet in the Solar System discovered by mathematical prediction rather than empirical observation. Scientists noted unexpected changes in the orbital behaviour of Uranus, leading them to believe that Neptune must be under the gravitational influence of an unknown body.",
-        blurb2: "After noting the predicted position of the planet, Neptune was first observed with a telescope in 1846. The planet's relative distance from Earth makes it challenging to study with telescopes on Earth. The Hubble Space Telescope and other imaging technology with adaptive optics have made observing the planet from Earth much easier.",
+        blurb1: "Neptune is named after the Roman god of the sea, and has an astronomical symbol representing his trident. Neptune isn't visible to the naked eye and is the only planet in the Solar System discovered by mathematical prediction rather than empirical observation. Scientists noted unexpected changes in the orbital behaviour of Uranus, leading them to believe it must be under the gravitational influence of an unknown body.",
+        blurb2: "After noting the predicted position of the planet, Neptune was first observed with a telescope in 1846. The planet's relative distance from Earth makes it challenging to study with conventional telescopes. The Hubble Space Telescope and other imaging technology with adaptive optics have made observing the planet from Earth much easier.",
         blurb3: neptune,
     },
     {

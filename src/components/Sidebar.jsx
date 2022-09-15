@@ -33,7 +33,7 @@ const Sidebar = ({ isHidden, setIsHidden, currentPlanet, content1, content2, con
             <ul>
                 <li>Average Temperature: {planetStatistics.temp} K</li>
                 <li>Surface Gravity: {planetStatistics.gravity} m/s2</li>
-                <li>Number of Moons: {planetStatistics.moons === null ? 0 : `${planetStatistics.moons}`}</li>
+                <li>Number of Moons: {planetStatistics.moons === null ? 0 : `${planetStatistics.moons.length}`}</li>
                 <li>Radius: {planetStatistics.radius} km</li>
                 <li>Escape Velocity: {planetStatistics.escape} m/s</li>
             </ul>
