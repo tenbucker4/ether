@@ -14,7 +14,7 @@
     --earth: #26daaa;
     --mars: #e55f45;
     --jupiter: orange;
-    --saturn: #b29d81;
+    --saturn: #eee76b;
     --uranus: #8dcdd8;
     --neptune: #794fe2;
     --pluto: #fccfba;
@@ -97,7 +97,7 @@ header,
 .move-right {
     cursor: pointer;
     position: absolute;
-    z-index: 10;
+    z-index: 9;
     width: 50px;
     bottom: 2rem;
     transition: transform 0.3s ease-in-out;
@@ -187,10 +187,20 @@ header,
 
 .sidebar {
     color: black;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 .sidebar div {
     color: rgb(26, 26, 26);
+}
+
+.sidebar img {
+    width: 100%;
+    height: auto;
 }
 
 .sidebar-backdrop {
@@ -203,7 +213,25 @@ header,
     transition: bottom 0.5s ease-in-out;
 }
 
+.sidebar-planet-title {
+    padding-top: 3rem;
+    position: relative;
+    font-size: 18px;
+}
+
+.planet-underline {
+    position: absolute;
+    bottom: -0.3rem;
+    left: 0;
+    background-color: black;
+    height: 2px;
+    width: 25px;
+}
+
 .close-menu {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
     width: fit-content;
     cursor: pointer;
 }

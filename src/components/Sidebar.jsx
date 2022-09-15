@@ -17,12 +17,13 @@ const Sidebar = ({ isHidden, setIsHidden, currentPlanet, content1, content2, con
                     color="gray"
                 />
             </div>
-            <div style={{ textTransform: "uppercase" }}>
-                {currentPlanet}
+            <div className='sidebar-planet-title' style={{ textTransform: "uppercase" }}>
+                <div>{currentPlanet}</div>
+                <span className='planet-underline'></span>
             </div>
+            <img src={content3}></img>
             <div>{content1}</div>
             <div>{content2}</div>
-            <div>{content3}</div>
         </aside>
         <aside
         className="sidebar-backdrop"
