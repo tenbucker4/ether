@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import planets from "./constants/planets";
 import colors from "./constants/colors";
-import Icon from "@mdi/react";
-import { mdiClose } from "@mdi/js";
-import { mdiChevronLeft } from "@mdi/js";
-import { mdiChevronRight } from "@mdi/js";
+import Header from "./components/Header";
+import PlanetOverlay from "./components/PlanetOverlay";
+import Sidebar from "./components/Sidebar";
+import PlanetSlider from "./components/PlanetSlider";
 import "./index.css";
 
 function App() {
@@ -68,111 +68,27 @@ function App() {
 
     return (
         <>
-            <header
-                style={{ fontWeight: "100", textTransform: "uppercase" }}
-                className="app-title"
-            >
-                <div
-                    style={{
-                        fontSize: "36px",
-                    }}
-                >
-                    Ether
-                </div>
-                <div style={{ fontSize: "18px" }}>Explore our solar system</div>
-            </header>
-            <div
-                className="planet-title"
-                style={{
-                    textTransform: "uppercase",
-                    fontWeight: "100",
-                    opacity: `${opacity}`,
-                    transition: "opacity 1s ease-in-out",
-                }}
-            >
-                <div style={{ fontSize: "30px" }}>{currentPlanet}</div>
-                <div
-                    style={{
-                        fontSize: "14px",
-                        color: `${currentColor}`,
-                        textDecoration: "underline",
-                        cursor: "pointer",
-                    }}
-                    className="learn-more"
-                    onClick={() => setIsHidden((prev) => !prev)}
-                >
-                    Learn More
-                </div>
-            </div>
-            <div
-                className="planet-description"
-                style={{
-                    textTransform: "uppercase",
-                    fontSize: "16px",
-                    fontWeight: "100",
-                    opacity: `${opacity}`,
-                    transition: "opacity 1s ease-in-out",
-                }}
-            >
-                <p style={{ textAlign: "center" }}>{description}</p>
-            </div>
-            <aside
-                className="sidebar"
-                style={{ right: isHidden ? "-400px" : "0" }}
-            >
-                <div className="close-menu">
-                    <Icon
-                        path={mdiClose}
-                        onClick={() => setIsHidden((prev) => !prev)}
-                        size={1.5}
-                        color="gray"
-                    />
-                </div>
-                <div style={{ textTransform: "uppercase" }}>
-                    {currentPlanet}
-                </div>
-                <div>{content1}</div>
-                <div>{content2}</div>
-                <div>{content3}</div>
-            </aside>
-            <aside
-                className="sidebar-backdrop"
-                style={{ bottom: isHidden ? "-100%" : "0" }}
-            ></aside>
-            <div className="move-left">
-                <Icon
-                    path={mdiChevronLeft}
-                    onClick={() => translateLeft()}
-                    size={2}
-                    color="white"
-                />
-            </div>
-            <div className="move-right">
-                <Icon
-                    path={mdiChevronRight}
-                    onClick={() => translateRight()}
-                    size={2}
-                    color="white"
-                />
-            </div>
-            <div className="slider-container">
-                <div
-                    className="slider"
-                    style={{
-                        transform: `translateX(calc(${index} * calc(-100% / 9)))`,
-                    }}
-                >
-                    <div className="test mercury"></div>
-                    <div className="test venus"></div>
-                    <div className="test earth"></div>
-                    <div className="test mars"></div>
-                    <div className="test jupiter"></div>
-                    <div className="test saturn"></div>
-                    <div className="test uranus"></div>
-                    <div className="test neptune"></div>
-                    <div className="test pluto"></div>
-                </div>
-            </div>
+            <Header />
+            <PlanetOverlay
+                opacity={opacity}
+                currentPlanet={currentPlanet}
+                currentColor={currentColor}
+                setIsHidden={setIsHidden}
+                description={description}
+            />
+            <Sidebar
+                isHidden={isHidden}
+                setIsHidden={setIsHidden}
+                currentPlanet={currentPlanet}
+                content1={content1}
+                content2={content2}
+                content3={content3}
+            />
+            <PlanetSlider
+                translateLeft={translateLeft}
+                translateRight={translateRight}
+                index={index}
+            />
         </>
     );
 }
