@@ -11,6 +11,9 @@ function App() {
     const [index, setIndex] = useState(0);
     const [currentPlanet, setCurrentPlanet] = useState(planets[index].name);
     const [description, setDescription] = useState(planets[index].description);
+    const [content1, setContent1] = useState(planets[index].blurb1);
+    const [content2, setContent2] = useState(planets[index].blurb2);
+    const [content3, setContent3] = useState(planets[index].blurb3);
     const [currentColor, setCurrentColor] = useState(colors[index]);
     const [opacity, setOpacity] = useState(1);
     const [isHidden, setIsHidden] = useState(true);
@@ -22,6 +25,9 @@ function App() {
             setTimeout(() => {
                 setCurrentPlanet(planets[0].name);
                 setDescription(planets[0].description);
+                setContent1(planets[0].blurb1);
+                setContent2(planets[0].blurb2);
+                setContent3(planets[0].blurb3);
                 setCurrentColor(colors[0]);
             }, 1500);
         } else {
@@ -30,6 +36,9 @@ function App() {
             setTimeout(() => {
                 setCurrentPlanet(planets[index + 1].name);
                 setDescription(planets[index + 1].description);
+                setContent1(planets[index + 1].blurb1);
+                setContent2(planets[index + 1].blurb2);
+                setContent3(planets[index + 1].blurb3);
                 setCurrentColor(colors[index + 1]);
             }, 1500);
         }
@@ -42,6 +51,9 @@ function App() {
             setTimeout(() => {
                 setCurrentPlanet(planets[8].name);
                 setDescription(planets[8].description);
+                setContent1(planets[8].blurb1);
+                setContent2(planets[8].blurb2);
+                setContent3(planets[8].blurb3);
                 setCurrentColor(colors[8]);
             }, 1500);
         } else {
@@ -50,6 +62,9 @@ function App() {
             setTimeout(() => {
                 setCurrentPlanet(planets[index - 1].name);
                 setDescription(planets[index - 1].description);
+                setContent1(planets[index - 1].blurb1);
+                setContent2(planets[index - 1].blurb2);
+                setContent3(planets[index - 1].blurb3);
                 setCurrentColor(colors[index - 1]);
             }, 1500);
         }
@@ -83,7 +98,7 @@ function App() {
                     textTransform: "uppercase",
                     fontWeight: "100",
                     opacity: `${opacity}`,
-                    transition: "opacity 0.5s ease-in-out",
+                    transition: "opacity 1s ease-in-out",
                 }}
             >
                 <div style={{ fontSize: "30px" }}>{currentPlanet}</div>
@@ -107,7 +122,7 @@ function App() {
                     fontSize: "16px",
                     fontWeight: "100",
                     opacity: `${opacity}`,
-                    transition: "opacity 0.5s ease-in-out",
+                    transition: "opacity 1s ease-in-out",
                 }}
             >
                 <p style={{ textAlign: "center" }}>{description}</p>
@@ -116,10 +131,25 @@ function App() {
                 className="sidebar"
                 style={{ right: isHidden ? "-400px" : "0" }}
             >
+                <div className="close-menu">
+                    <Icon
+                        path={mdiClose}
+                        onClick={() => setIsHidden((prev) => !prev)}
+                        size={1.5}
+                        color="gray"
+                    />
+                </div>
                 <div style={{ textTransform: "uppercase" }}>
                     {currentPlanet}
                 </div>
+                <div>{content1}</div>
+                <div>{content2}</div>
+                <div>{content3}</div>
             </aside>
+            <aside
+                className="sidebar-backdrop"
+                style={{ left: isHidden ? "-100%" : "0" }}
+            ></aside>
             <div className="move-left">
                 <Icon
                     path={mdiChevronLeft}

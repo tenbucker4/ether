@@ -174,12 +174,44 @@ header,
     box-shadow: 0px -2px 20px 5px var(--pluto);
 }
 
-aside {
+.sidebar {
     position: absolute;
     top: 0;
     height: 100%;
     width: 400px;
     background-color: rgb(255, 255, 255);
     z-index: 10;
-    transition: right 0.75s ease-in-out;
+    transition: right 0.5s ease-in-out;
+}
+
+.sidebar {
+    color: black;
+}
+
+.sidebar div {
+    color: rgb(26, 26, 26);
+}
+
+.sidebar-backdrop {
+    width: calc(100% - 400px);
+    position: absolute;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 20;
+    transition: left 0.5s ease-in-out;
+}
+
+.close-menu {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.close-menu svg {
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.close-menu svg:hover {
+    background-color: rgba(0, 0, 0, 0.15);
 }
