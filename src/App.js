@@ -18,24 +18,34 @@ function App() {
     const [opacity, setOpacity] = useState(1);
     const [isHidden, setIsHidden] = useState(true);
 
+    const setPlanetContent = (i) => {
+        setCurrentPlanet(planets[i].name);
+        setDescription(planets[i].description);
+        setContent1(planets[i].blurb1);
+        setContent2(planets[i].blurb2);
+        setContent3(planets[i].blurb3);
+        setCurrentColor(colors[i]);
+    };
+
+    const startTimer = () => {
+        setOpacity(0);
+        setTimeout(() => {
+            setOpacity(1);
+        }, 2500);
+    };
+
     const translateRight = () => {
         if (index === 8) {
             startTimer();
             setIndex(0);
             setTimeout(() => {
-                setCurrentPlanet(planets[0].name);
-                setDescription(planets[0].description);
-                setLongContent(0);
-                setCurrentColor(colors[0]);
+                setPlanetContent(0);
             }, 1500);
         } else {
             startTimer();
             setIndex((prev) => prev + 1);
             setTimeout(() => {
-                setCurrentPlanet(planets[index + 1].name);
-                setDescription(planets[index + 1].description);
-                setLongContent(index + 1);
-                setCurrentColor(colors[index + 1]);
+                setPlanetContent(index + 1);
             }, 1500);
         }
     };
@@ -45,34 +55,15 @@ function App() {
             startTimer();
             setIndex(8);
             setTimeout(() => {
-                setCurrentPlanet(planets[8].name);
-                setDescription(planets[8].description);
-                setLongContent(8);
-                setCurrentColor(colors[8]);
+                setPlanetContent(8);
             }, 1500);
         } else {
             startTimer();
             setIndex((prev) => prev - 1);
             setTimeout(() => {
-                setCurrentPlanet(planets[index - 1].name);
-                setDescription(planets[index - 1].description);
-                setLongContent(index - 1);
-                setCurrentColor(colors[index - 1]);
+                setPlanetContent(index - 1);
             }, 1500);
         }
-    };
-
-    const setLongContent = (i) => {
-        setContent1(planets[i].blurb1);
-        setContent2(planets[i].blurb2);
-        setContent3(planets[i].blurb3);
-    };
-
-    const startTimer = () => {
-        setOpacity(0);
-        setTimeout(() => {
-            setOpacity(1);
-        }, 2500);
     };
 
     return (
@@ -146,7 +137,7 @@ function App() {
             </aside>
             <aside
                 className="sidebar-backdrop"
-                style={{ left: isHidden ? "-100%" : "0" }}
+                style={{ bottom: isHidden ? "-100%" : "0" }}
             ></aside>
             <div className="move-left">
                 <Icon

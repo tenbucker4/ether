@@ -197,10 +197,10 @@ header,
     width: calc(100% - 400px);
     position: absolute;
     height: 100%;
-    top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 20;
-    transition: left 0.5s ease-in-out;
+    transition: bottom 0.5s ease-in-out;
 }
 
 .close-menu {
