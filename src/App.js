@@ -25,9 +25,7 @@ function App() {
             setTimeout(() => {
                 setCurrentPlanet(planets[0].name);
                 setDescription(planets[0].description);
-                setContent1(planets[0].blurb1);
-                setContent2(planets[0].blurb2);
-                setContent3(planets[0].blurb3);
+                setLongContent(0);
                 setCurrentColor(colors[0]);
             }, 1500);
         } else {
@@ -36,9 +34,7 @@ function App() {
             setTimeout(() => {
                 setCurrentPlanet(planets[index + 1].name);
                 setDescription(planets[index + 1].description);
-                setContent1(planets[index + 1].blurb1);
-                setContent2(planets[index + 1].blurb2);
-                setContent3(planets[index + 1].blurb3);
+                setLongContent(index + 1);
                 setCurrentColor(colors[index + 1]);
             }, 1500);
         }
@@ -51,9 +47,7 @@ function App() {
             setTimeout(() => {
                 setCurrentPlanet(planets[8].name);
                 setDescription(planets[8].description);
-                setContent1(planets[8].blurb1);
-                setContent2(planets[8].blurb2);
-                setContent3(planets[8].blurb3);
+                setLongContent(8);
                 setCurrentColor(colors[8]);
             }, 1500);
         } else {
@@ -62,12 +56,16 @@ function App() {
             setTimeout(() => {
                 setCurrentPlanet(planets[index - 1].name);
                 setDescription(planets[index - 1].description);
-                setContent1(planets[index - 1].blurb1);
-                setContent2(planets[index - 1].blurb2);
-                setContent3(planets[index - 1].blurb3);
+                setLongContent(index - 1);
                 setCurrentColor(colors[index - 1]);
             }, 1500);
         }
+    };
+
+    const setLongContent = (i) => {
+        setContent1(planets[i].blurb1);
+        setContent2(planets[i].blurb2);
+        setContent3(planets[i].blurb3);
     };
 
     const startTimer = () => {
