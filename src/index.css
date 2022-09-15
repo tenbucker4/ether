@@ -194,7 +194,8 @@ header,
     gap: 1rem;
 }
 
-.sidebar div {
+.sidebar div,
+.sidebar ul li {
     color: rgb(26, 26, 26);
 }
 

@@ -21,7 +21,7 @@ const planets = [
         name: "venus",
         description:
             "Named after the Roman goddess of love and beauty, Venus is the second brightest object in our night sky behind the Moon. It can even be seen during daylight with the naked eye.",
-        blurb1: "Venus is the brightest natural object in Earth's night sky after the moon. It is so bright that it can even cast shadows. Venus is most visible for the few hours after sunrise or before sunset. Because the movement of the planet appears discontinuous (its visibility varies with its proximity to the Sun, ancient cultures believed to be two entities: the morning star and the evening star.",
+        blurb1: "Venus is the brightest natural object in Earth's night sky after the moon. It is so bright that it can even cast shadows. Venus is most visible for the few hours after sunrise or before sunset. Because the movement of the planet appears discontinuous (its visibility varies with its proximity to the Sun), ancient cultures believed to be two entities: the morning star and the evening star.",
         blurb2: "Despite being further from the Sun than Mercury, Venus is the hottest surface planet in the Solar System. Its atmosphere consists of 96% carbon dioxide, and it's surrounded by a layer of sulfuric acid clouds, obscuring the visilibilty of its surface to us. Venus' harsh conditions make the probability for supporting life quite low, but some scientists believe that thermoacidophilic extremophile organisms may exist in the upper atmosphere.",
         blurb3: venus,
     },

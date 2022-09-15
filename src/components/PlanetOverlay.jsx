@@ -1,11 +1,6 @@
 import React from 'react'
-import { useEffect } from 'react'
 
-const PlanetOverlay = ({ opacity, currentPlanet, currentColor, setIsHidden, description, fetchPlanetData }) => {
-    
-    useEffect(() => {
-        fetchPlanetData();
-    },[currentPlanet])
+const PlanetOverlay = ({ opacity, currentPlanet, currentColor, setIsHidden, description }) => {
 
   return (
     <>

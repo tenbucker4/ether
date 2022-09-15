@@ -14,6 +14,15 @@ function App() {
     const [content1, setContent1] = useState(planets[index].blurb1);
     const [content2, setContent2] = useState(planets[index].blurb2);
     const [content3, setContent3] = useState(planets[index].blurb3);
+    const [planetStatistics, setPlanetStatistics] = useState({
+        name: "",
+        temp: "",
+        gravity: "",
+        mass: "",
+        radius: "",
+        moons: "",
+        escape: "",
+    });
     const [currentColor, setCurrentColor] = useState(colors[index]);
     const [opacity, setOpacity] = useState(1);
     const [isHidden, setIsHidden] = useState(true);
@@ -75,11 +84,20 @@ function App() {
                 }
             );
             let planetData = await response.json();
-            console.log(planetData);
+            setPlanetStatistics({
+                name: planetData.englishName,
+                temp: planetData.avgTemp,
+                gravity: planetData.gravity,
+                radius: planetData.meanRadius,
+                moons: planetData.moons,
+                escape: planetData.escape,
+            });
         } catch (error) {
             console.log(error);
         }
     };
+
+    console.log(planetStatistics);
 
     return (
         <>
@@ -90,7 +108,6 @@ function App() {
                 currentColor={currentColor}
                 setIsHidden={setIsHidden}
                 description={description}
-                fetchPlanetData={fetchPlanetData}
             />
             <Sidebar
                 isHidden={isHidden}
@@ -99,6 +116,8 @@ function App() {
                 content1={content1}
                 content2={content2}
                 content3={content3}
+                planetStatistics={planetStatistics}
+                fetchPlanetData={fetchPlanetData}
             />
             <PlanetSlider
                 translateLeft={translateLeft}

@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Icon from "@mdi/react";
 import { mdiClose } from "@mdi/js";
 
-const Sidebar = ({ isHidden, setIsHidden, currentPlanet, content1, content2, content3 }) => {
-  return (
+const Sidebar = ({ isHidden, setIsHidden, currentPlanet, content1, content2, content3, fetchPlanetData, planetStatistics }) => {
+    useEffect(() => {
+        fetchPlanetData();
+    },[currentPlanet])
+
+    console.log(planetStatistics.temp)
+
+    return (
     <>
         <aside
         className="sidebar"
@@ -24,6 +30,13 @@ const Sidebar = ({ isHidden, setIsHidden, currentPlanet, content1, content2, con
             <img src={content3}></img>
             <div>{content1}</div>
             <div>{content2}</div>
+            <ul>
+                <li>Average Temperature: {planetStatistics.temp} K</li>
+                <li>Surface Gravity: {planetStatistics.gravity} m/s2</li>
+                <li>Number of Moons: {planetStatistics.moons === null ? 0 : `${planetStatistics.moons}`}</li>
+                <li>Radius: {planetStatistics.radius} km</li>
+                <li>Escape Velocity: {planetStatistics.escape} m/s</li>
+            </ul>
         </aside>
         <aside
         className="sidebar-backdrop"
