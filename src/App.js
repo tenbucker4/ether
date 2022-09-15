@@ -66,6 +66,21 @@ function App() {
         }
     };
 
+    const fetchPlanetData = async () => {
+        try {
+            const response = await fetch(
+                `https://api.le-systeme-solaire.net/rest/bodies/${currentPlanet}`,
+                {
+                    mode: "cors",
+                }
+            );
+            let planetData = await response.json();
+            console.log(planetData);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <>
             <Header />
@@ -75,6 +90,7 @@ function App() {
                 currentColor={currentColor}
                 setIsHidden={setIsHidden}
                 description={description}
+                fetchPlanetData={fetchPlanetData}
             />
             <Sidebar
                 isHidden={isHidden}
