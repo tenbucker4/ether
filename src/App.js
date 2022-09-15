@@ -1,33 +1,16 @@
 import React, { useState, useEffect } from "react";
+import planets from "./constants/planets";
+import colors from "./constants/colors";
+import Icon from "@mdi/react";
+import { mdiClose } from "@mdi/js";
+import { mdiChevronLeft } from "@mdi/js";
+import { mdiChevronRight } from "@mdi/js";
 import "./index.css";
-
-const planets = [
-    "mercury",
-    "venus",
-    "earth",
-    "mars",
-    "jupiter",
-    "saturn",
-    "uranus",
-    "neptune",
-    "pluto",
-];
-
-const colors = [
-    "#e8927c",
-    "#b45d15",
-    "#26daaa",
-    "#e55f45",
-    "orange",
-    "#b29d81",
-    "#8dcdd8",
-    "#794fe2",
-    "#fccfba",
-];
 
 function App() {
     const [index, setIndex] = useState(0);
-    const [currentPlanet, setCurrentPlanet] = useState(planets[index]);
+    const [currentPlanet, setCurrentPlanet] = useState(planets[index].name);
+    const [description, setDescription] = useState(planets[index].description);
     const [currentColor, setCurrentColor] = useState(colors[index]);
     const [opacity, setOpacity] = useState(1);
     const [isHidden, setIsHidden] = useState(true);
@@ -37,17 +20,18 @@ function App() {
             startTimer();
             setIndex(0);
             setTimeout(() => {
-                setCurrentPlanet(planets[0]);
+                setCurrentPlanet(planets[0].name);
+                setDescription(planets[0].description);
                 setCurrentColor(colors[0]);
             }, 1500);
         } else {
             startTimer();
             setIndex((prev) => prev + 1);
             setTimeout(() => {
-                setCurrentPlanet(planets[index + 1]);
+                setCurrentPlanet(planets[index + 1].name);
+                setDescription(planets[index + 1].description);
                 setCurrentColor(colors[index + 1]);
             }, 1500);
-            console.log("shouldnt see this");
         }
     };
 
@@ -56,14 +40,16 @@ function App() {
             startTimer();
             setIndex(8);
             setTimeout(() => {
-                setCurrentPlanet(planets[8]);
+                setCurrentPlanet(planets[8].name);
+                setDescription(planets[8].description);
                 setCurrentColor(colors[8]);
             }, 1500);
         } else {
             startTimer();
             setIndex((prev) => prev - 1);
             setTimeout(() => {
-                setCurrentPlanet(planets[index - 1]);
+                setCurrentPlanet(planets[index - 1].name);
+                setDescription(planets[index - 1].description);
                 setCurrentColor(colors[index - 1]);
             }, 1500);
         }
@@ -100,12 +86,13 @@ function App() {
                     transition: "opacity 0.5s ease-in-out",
                 }}
             >
-                <div style={{ fontSize: "24px" }}>{currentPlanet}</div>
+                <div style={{ fontSize: "30px" }}>{currentPlanet}</div>
                 <div
                     style={{
                         fontSize: "14px",
                         color: `${currentColor}`,
                         textDecoration: "underline",
+                        cursor: "pointer",
                     }}
                     className="learn-more"
                     onClick={() => setIsHidden((prev) => !prev)}
@@ -119,23 +106,36 @@ function App() {
                     textTransform: "uppercase",
                     fontSize: "16px",
                     fontWeight: "100",
+                    opacity: `${opacity}`,
+                    transition: "opacity 0.5s ease-in-out",
                 }}
             >
-                <p style={{ textAlign: "center" }}>
-                    This is a test. This is a test. This is a test. This is a
-                    test. This is a test. This is a test. This is a test.
-                </p>
+                <p style={{ textAlign: "center" }}>{description}</p>
             </div>
-            <button onClick={() => translateLeft()}>Left</button>
-            <button onClick={() => translateRight()}>Right</button>
             <aside
                 className="sidebar"
-                style={{ right: isHidden ? "-40%" : "0" }}
+                style={{ right: isHidden ? "-400px" : "0" }}
             >
                 <div style={{ textTransform: "uppercase" }}>
                     {currentPlanet}
                 </div>
             </aside>
+            <div className="move-left">
+                <Icon
+                    path={mdiChevronLeft}
+                    onClick={() => translateLeft()}
+                    size={2}
+                    color="white"
+                />
+            </div>
+            <div className="move-right">
+                <Icon
+                    path={mdiChevronRight}
+                    onClick={() => translateRight()}
+                    size={2}
+                    color="white"
+                />
+            </div>
             <div className="slider-container">
                 <div
                     className="slider"
