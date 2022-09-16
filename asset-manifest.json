@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ether/static/css/main.0a2d412c.css",
+    "main.js": "/ether/static/js/main.2a35f46c.js",
+    "static/media/mercury.jpg": "/ether/static/media/mercury.caea8b6215b7fbf6062f.jpg",
+    "static/media/saturn.jpg": "/ether/static/media/saturn.55d4b88778416cb744bd.jpg",
+    "static/media/venus.jpg": "/ether/static/media/venus.e572a36266e131baa392.jpg",
+    "static/media/earth.jpg": "/ether/static/media/earth.cf18361a5251c8935ed5.jpg",
+    "static/media/neptune.jpg": "/ether/static/media/neptune.ccde6884ae165e18be9c.jpg",
+    "static/media/jupiter.jpg": "/ether/static/media/jupiter.757035516b982de69f21.jpg",
+    "static/media/pluto.jpg": "/ether/static/media/pluto.d798bbbe033604ec2a63.jpg",
+    "static/media/mars.jpg": "/ether/static/media/mars.9476da02b58cccdd323f.jpg",
+    "static/media/uranus.jpg": "/ether/static/media/uranus.fe6af50b7043004bcd80.jpg",
+    "index.html": "/ether/index.html",
+    "main.0a2d412c.css.map": "/ether/static/css/main.0a2d412c.css.map",
+    "main.2a35f46c.js.map": "/ether/static/js/main.2a35f46c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a2d412c.css",
+    "static/js/main.2a35f46c.js"
+  ]
+}
