@@ -1,0 +1,62 @@
+@import "./sidebar", "./planetSlider";
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+#root {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+
+header {
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.app-title {
+    text-align: center;
+}
+
+.planet-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 2rem;
+}
+
+.planet-description {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5rem;
+}
+
+header,
+.planet-title,
+.planet-description {
+    position: relative;
+    z-index: 5;
+}

@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import PlanetOverlay from "./components/PlanetOverlay";
 import Sidebar from "./components/Sidebar";
 import PlanetSlider from "./components/PlanetSlider";
-import "./index.css";
+import "./styles/styles.css";
 
 function App() {
     const [index, setIndex] = useState(0);
@@ -14,6 +14,8 @@ function App() {
     const [content1, setContent1] = useState(planets[index].blurb1);
     const [content2, setContent2] = useState(planets[index].blurb2);
     const [content3, setContent3] = useState(planets[index].blurb3);
+
+    // initial planet stats state for API data
     const [planetStatistics, setPlanetStatistics] = useState({
         name: "",
         temp: "",
@@ -23,6 +25,8 @@ function App() {
         moons: "",
         escape: "",
     });
+
+    // Display colors, text opacity and hidden information
     const [currentColor, setCurrentColor] = useState(colors[index]);
     const [opacity, setOpacity] = useState(1);
     const [isHidden, setIsHidden] = useState(true);
@@ -36,6 +40,7 @@ function App() {
         setCurrentColor(colors[i]);
     };
 
+    // Starts opacity timer to line up with planet translation speed
     const startTimer = () => {
         setOpacity(0);
         setTimeout(() => {
@@ -43,6 +48,7 @@ function App() {
         }, 2500);
     };
 
+    // Translate planet right, scroll back to beginning if at pluto
     const translateRight = () => {
         if (index === 8) {
             startTimer();
@@ -59,6 +65,7 @@ function App() {
         }
     };
 
+    // Translate left. Scroll to end if on mercury
     const translateLeft = () => {
         if (index === 0) {
             startTimer();
@@ -75,6 +82,7 @@ function App() {
         }
     };
 
+    // fetch planet data from The Solar System OpenData API
     const fetchPlanetData = async () => {
         try {
             const response = await fetch(
@@ -96,8 +104,6 @@ function App() {
             console.log(error);
         }
     };
-
-    console.log(planetStatistics);
 
     return (
         <>

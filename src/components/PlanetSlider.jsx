@@ -29,15 +29,15 @@ const PlanetSlider = ({ translateLeft, translateRight, index }) => {
                     transform: `translateX(calc(${index} * calc(-100% / 9)))`,
                 }}
             >
-                <div className="test mercury"></div>
-                <div className="test venus"></div>
-                <div className="test earth"></div>
-                <div className="test mars"></div>
-                <div className="test jupiter"></div>
-                <div className="test saturn"></div>
-                <div className="test uranus"></div>
-                <div className="test neptune"></div>
-                <div className="test pluto"></div>
+                <div className="planet mercury"></div>
+                <div className="planet venus"></div>
+                <div className="planet earth"></div>
+                <div className="planet mars"></div>
+                <div className="planet jupiter"></div>
+                <div className="planet saturn"></div>
+                <div className="planet uranus"></div>
+                <div className="planet neptune"></div>
+                <div className="planet pluto"></div>
             </div>
         </div>
     </>

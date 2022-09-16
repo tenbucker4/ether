@@ -7,8 +7,6 @@ const Sidebar = ({ isHidden, setIsHidden, currentPlanet, content1, content2, con
         fetchPlanetData();
     },[currentPlanet])
 
-    console.log(planetStatistics.temp)
-
     return (
     <>
         <aside
@@ -31,7 +29,7 @@ const Sidebar = ({ isHidden, setIsHidden, currentPlanet, content1, content2, con
             <div>{content1}</div>
             <div>{content2}</div>
             <ul>
-                <li>Average Temperature: {planetStatistics.temp} K</li>
+                <li><b></b>Average Temperature: {planetStatistics.temp} K</li>
                 <li>Surface Gravity: {planetStatistics.gravity} m/s2</li>
                 <li>Number of Moons: {planetStatistics.moons === null ? 0 : `${planetStatistics.moons.length}`}</li>
                 <li>Radius: {planetStatistics.radius} km</li>

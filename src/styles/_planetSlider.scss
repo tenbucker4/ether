@@ -1,0 +1,251 @@
+$mercury: #e8927c;
+$venus: #b45d15;
+$earth: #26daaa;
+$mars: #e55f45;
+$jupiter: orange;
+$saturn: #eee76b;
+$uranus: #8dcdd8;
+$neptune: #794fe2;
+$pluto: #fccfba;
+
+
+.slider-container {
+    position: absolute;
+    bottom: -5vh;
+    left: 0;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .slider {
+        z-index: 1;
+        height: 32vw;
+        padding-left: 25vw;
+        padding-right: 25vw;
+        gap: 50vw;
+        --slider-index: 0;
+        display: flex;
+        align-items: flex-end;
+        flex-grow: 1;
+        transform: translateX(calc(var(--slider-index) * -100%));
+        transition: transform 3.5s ease-in-out;
+        position: relative;
+        filter: brightness(85%);
+
+        .planet {
+            width: 50vw;
+            aspect-ratio: 2 / 1;
+            border-radius: 37.5vw 37.5vw 0 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .mercury {
+            background: linear-gradient(to top, black 25%, 75%, $mercury);
+            box-shadow: 0px -2px 20px 5px $mercury;
+            transition: box-shadow 2s ease-in-out;
+            animation: glowMerc 8s infinite;
+
+            @keyframes glowMerc {
+                0% {
+                    box-shadow: 0px -2px 20px 5px $mercury;
+                }
+                50% {
+                    box-shadow: 0px -2px 2vw 5px $mercury;
+                }
+                100% {
+                    box-shadow: 0px -2px 20px 5px $mercury;
+                }
+            }
+        }
+
+
+        .venus {
+            background: linear-gradient(to top, black 25%, 75%, $venus);
+            box-shadow: 0px -2px 20px 5px $venus;
+            transition: box-shadow 2s ease-in-out;
+            animation: glowVenus 8s infinite;
+
+            @keyframes glowVenus {
+                0% {
+                    box-shadow: 0px -2px 20px 5px $venus;
+                }
+                50% {
+                    box-shadow: 0px -2px 2vw 5px $venus;
+                }
+                100% {
+                    box-shadow: 0px -2px 20px 5px $venus;
+                }
+            }
+        }
+
+        .earth {
+            background: linear-gradient(to top, black 25%, 75%, $earth);
+            box-shadow: 0px -2px 20px 5px $earth;
+            transition: box-shadow 2s ease-in-out;
+            animation: glowEarth 8s infinite;
+
+            @keyframes glowEarth {
+                0% {
+                    box-shadow: 0px -2px 20px 5px $earth;
+                }
+                50% {
+                    box-shadow: 0px -2px 2vw 5px $earth;
+                }
+                100% {
+                    box-shadow: 0px -2px 20px 5px $earth;
+                }
+            }
+        }
+
+        .mars {
+            background: linear-gradient(to top, black 25%, 75%, $mars);
+            box-shadow: 0px -2px 20px 5px $mars;
+            transition: box-shadow 2s ease-in-out;
+            animation: glowMars 8s infinite;
+
+            @keyframes glowMars {
+                0% {
+                    box-shadow: 0px -2px 20px 5px $mars;
+                }
+                50% {
+                    box-shadow: 0px -2px 2vw 5px $mars;
+                }
+                100% {
+                    box-shadow: 0px -2px 20px 5px $mars;
+                }
+            }
+        }
+
+        .jupiter {
+            background: linear-gradient(to top, black 25%, 75%, $jupiter);
+            box-shadow: 0px -2px 20px 5px $jupiter;
+            transition: box-shadow 2s ease-in-out;
+            animation: glowJup 8s infinite;
+
+            @keyframes glowJup {
+                0% {
+                    box-shadow: 0px -2px 20px 5px $jupiter;
+                }
+                50% {
+                    box-shadow: 0px -2px 2vw 5px $jupiter;
+                }
+                100% {
+                    box-shadow: 0px -2px 20px 5px $jupiter;
+                }
+            }
+        }
+
+        .saturn {
+            background: linear-gradient(to top, black 25%, 75%, $saturn);
+            box-shadow: 0px -2px 20px 5px $saturn;
+            transition: box-shadow 2s ease-in-out;
+            animation: glowSat 8s infinite;
+
+            @keyframes glowSat {
+                0% {
+                    box-shadow: 0px -2px 20px 5px $saturn;
+                }
+                50% {
+                    box-shadow: 0px -2px 2vw 5px $saturn;
+                }
+                100% {
+                    box-shadow: 0px -2px 20px 5px $saturn;
+                }
+            }
+        }
+
+        .uranus {
+            background: linear-gradient(to top, black 25%, 75%, $uranus);
+            box-shadow: 0px -2px 20px 5px $uranus;
+            transition: box-shadow 2s ease-in-out;
+            animation: glowUr 8s infinite;
+
+            @keyframes glowUr {
+                0% {
+                    box-shadow: 0px -2px 20px 5px $uranus;
+                }
+                50% {
+                    box-shadow: 0px -2px 2vw 5px $uranus;
+                }
+                100% {
+                    box-shadow: 0px -2px 20px 5px $uranus;
+                }
+            }
+        }
+
+        .neptune {
+            background: linear-gradient(to top, black 25%, 75%, $neptune);
+            box-shadow: 0px -2px 20px 5px $neptune;
+            transition: box-shadow 2s ease-in-out;
+            animation: glowNep 8s infinite;
+
+            @keyframes glowNep {
+                0% {
+                    box-shadow: 0px -2px 20px 5px $neptune;
+                }
+                50% {
+                    box-shadow: 0px -2px 2vw 5px $neptune;
+                }
+                100% {
+                    box-shadow: 0px -2px 20px 5px $neptune;
+                }
+            }
+        }
+
+        .pluto {
+            background: linear-gradient(to top, black 25%, 75%, $pluto);
+            box-shadow: 0px -2px 20px 5px $pluto;
+            transition: box-shadow 2s ease-in-out;
+            animation: glowPluto 8s infinite;
+
+            @keyframes glowPluto {
+                0% {
+                    box-shadow: 0px -2px 20px 5px $pluto;
+                }
+                50% {
+                    box-shadow: 0px -2px 2vw 5px $pluto;
+                }
+                100% {
+                    box-shadow: 0px -2px 20px 5px $pluto;
+                }
+            }
+        }
+    }
+}
+
+.move-left,
+.move-right {
+    cursor: pointer;
+    position: absolute;
+    z-index: 9;
+    width: 50px;
+    bottom: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.move-left {
+    left: 2rem;
+
+    &:hover {
+        transform: scale(1.3);
+    }
+}
+
+.move-right {
+    right: 2rem;
+
+    &:hover {
+        transform: scale(1.3);
+    }
+}
+
+@media(max-width: 675px) {
+    .planet {
+        animation: none;
+    }
+}
+
+
+
